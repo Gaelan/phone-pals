@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
+    skip_policy_scope
+    skip_authorization
     if user_signed_in? && current_user.student?
       redirect_to callees_path
     end
