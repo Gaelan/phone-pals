@@ -25,6 +25,14 @@ class OrganizationPolicy < ApplicationPolicy
     user && user.admin?
   end
 
+  def edit?
+    user && (user.admin? || record.users.include?(user) )
+  end
+
+  def update?
+    user && (user.admin? || record.users.include?(user) )
+  end
+
   def destroy?
     user && user.admin?
   end
