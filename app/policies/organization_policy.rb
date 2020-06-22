@@ -20,4 +20,8 @@ class OrganizationPolicy < ApplicationPolicy
   def new?
     user && user.admin?
   end
+
+  def create?
+    user && user.admin?
+  end
 end
