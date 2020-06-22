@@ -1,0 +1,49 @@
+<h1> <%= @organization.name %> </h1>
+
+<p>
+  <strong>Switchboard number:</strong>
+  <%= @organization.switchboard_number %>
+</p>
+
+<p>
+  <h2>Staff</h2>
+  <ul>
+    <% @organization.users.each do |user| %>
+      <li> <%= user.name %> (<%= user.email %>) </li>
+    <% end %>
+  </ul>
+</p>
+
+<h2>Callees</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Bio</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @organization.callees.each do |callee| %>
+      <tr>
+        <td><%= callee.first_name %></td>
+        <td><%= callee.last_name %></td>
+        <td><%= callee.bio %></td>
+        <td><%= link_to 'Edit', edit_organization_callee_path(callee.organization, callee) %></td>
+        <td><%= link_to 'Destroy', [callee.organization, callee], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Callee', new_organization_callee_path(@organization) %>
+
+<br>
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

@@ -1,0 +1,17 @@
+<p>
+  <strong>First name:</strong>
+  <%= @callee.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @callee.last_name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @callee.bio %>
+</p>
+
+<%= link_to 'Edit', edit_organization_callee_path(@callee) %> |
+<%= link_to 'Back', callees_path %>

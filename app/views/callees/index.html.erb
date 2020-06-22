@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Callees</h1>
+
+<% @callees.each do |callee| %>
+  <h2><%= callee.safe_name %></h2>
+  <p><%= callee.bio %></p>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Phone Pals</h1>
+<% unless user_signed_in? %>
+<p><a href="<%= new_user_session_path %>">Log In</a></p>
+<p><a href="<%= new_user_registration_path %>">Sign Up</a></p>
+<% end %>
+<% if current_user && !current_user.student? %>
+If you're a high school student and you'd like to volunteer to make calls,
+make sure you're using your school email address. Currently, you're using the
+email address <%= current_user.email %>. If you'd like to change this, you can
+do so <%= link_to "here", edit_user_registration_path %>. If you're a high
+school student using your school email address and you still are getting this
+message, we might not know about your school. Contact us and we'll sort things
+out.
+<% end %>
