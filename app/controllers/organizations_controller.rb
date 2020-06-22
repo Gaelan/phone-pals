@@ -16,8 +16,8 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations/new
   def new
-    authorize Organization
     @organization = Organization.new
+    authorize @organization
   end
 
   # GET /organizations/1/edit
@@ -28,6 +28,7 @@ class OrganizationsController < ApplicationController
   # POST /organizations.json
   def create
     @organization = Organization.new(organization_params)
+    authorize @organization
 
     respond_to do |format|
       if @organization.save
@@ -68,6 +69,7 @@ class OrganizationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_organization
       @organization = Organization.find(params[:id])
+      authorize @organization
     end
 
     # Only allow a list of trusted parameters through.
