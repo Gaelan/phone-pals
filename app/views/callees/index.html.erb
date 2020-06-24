@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Callees</h1>
 
 <% @callees.each do |callee| %>
-  <h2><%= callee.safe_name %></h2>
-  <p><%= callee.bio %></p>
+  <div class="callee">
+    <p><%= callee.bio %></p>
+    <p><%= link_to "Call this person", callee_relationships_path(callee), method: :POST, data: {confirm: "Are you sure you'd like to add this person? You can add #{current_user.available_relationships} more people, including this one."} %></p>
+  </div>
 <% end %>

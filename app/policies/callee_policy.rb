@@ -1,11 +1,7 @@
 class CalleePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      if user.student?
-        scope.all # TODO SEC not taken
-      else
-        scope.where(organization: user.organizations)
-      end
+      user.student? ? scope.all : scope.where(organization: user.organizations) # TODO SEC not taken
     end
   end
 
@@ -13,10 +9,14 @@ class CalleePolicy < ApplicationPolicy
     user && user.student?
   end
 
+  def show?
+    record.users.include? user
+  end
+
   def new?
     user && (user.admin? || record.organization.users.include?(user))
   end
-  
+
   def create?
     user && (user.admin? || record.organization.users.include?(user))
   end
