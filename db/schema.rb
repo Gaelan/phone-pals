@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_24_035915) do
+ActiveRecord::Schema.define(version: 2020_06_24_181216) do
 
   create_table "callees", force: :cascade do |t|
     t.string "first_name"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 2020_06_24_035915) do
     t.integer "organization_id", null: false
     t.string "phone_number"
     t.index ["organization_id"], name: "index_callees_on_organization_id"
+  end
+
+  create_table "calls", force: :cascade do |t|
+    t.integer "callee_id", null: false
+    t.integer "user_id", null: false
+    t.integer "minutes"
+    t.text "details"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["callee_id"], name: "index_calls_on_callee_id"
+    t.index ["user_id"], name: "index_calls_on_user_id"
   end
 
   create_table "organization_memberships", force: :cascade do |t|
@@ -37,6 +48,15 @@ ActiveRecord::Schema.define(version: 2020_06_24_035915) do
     t.string "switchboard_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "callee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["callee_id"], name: "index_relationships_on_callee_id"
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,6 +78,10 @@ ActiveRecord::Schema.define(version: 2020_06_24_035915) do
   end
 
   add_foreign_key "callees", "organizations"
+  add_foreign_key "calls", "callees"
+  add_foreign_key "calls", "users"
   add_foreign_key "organization_memberships", "organizations"
   add_foreign_key "organization_memberships", "users"
+  add_foreign_key "relationships", "callees"
+  add_foreign_key "relationships", "users"
 end

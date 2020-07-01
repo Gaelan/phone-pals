@@ -1,0 +1,17 @@
+<% @callees.each do |callee| %>
+  <div class="callee">
+    <h2><%= callee.safe_name %></h2>
+    <p><%= callee.bio %></p>
+    <p><%= link_to "Call", callee_path(callee)%> </p>
+  </div>
+<% end %>
+
+<p>
+  <% if current_user.can_start_relationship? %>
+    <%= link_to "Call someone new", new_relationship_path %>
+  <% else %>
+    For safety reasons, we have a limit on how many people a volunteer can talk
+    to. You've reached that limit, but you're more than welcome to continue
+    calling the people you've already added!
+  <% end %>
+</p>

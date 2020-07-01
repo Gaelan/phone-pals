@@ -1,3 +1,34 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "_shared";
+
+#home-cta {
+  width: 30%;
+  margin: auto;
+
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1ex;
+  }
+
+  a {
+    display: block;
+    background-color: $brand-blue-1;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid $brand-blue-2;
+  }
+
+  .fine-print {
+    color: #888;
+    font-style: italic;
+  }
+}
+
+#home-gist {
+  text-align: center;
+  font-size: 2em;
+  font-style: italic;
+}

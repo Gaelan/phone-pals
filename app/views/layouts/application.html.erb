@@ -10,11 +10,24 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <p><%= link_to current_user.name, edit_user_registration_path %> | <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div id="container">
+      <header>
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
+        <div id="header-name"><%= link_to "Phone Pals", root_path %></div>
+        <% if user_signed_in? %>
+          <div id="header-user">
+            <div><%= link_to current_user.name, edit_user_registration_path %></div>
+            <div><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></div>
+          </div>
+        <% else %>
+          <div id="header-user"><%= link_to "Sign in", new_user_session_path %></div>
+        <% end %>
+      </header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

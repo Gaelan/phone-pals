@@ -1,0 +1,58 @@
+@import "_shared";
+
+#container {
+  max-width: 75em;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  height: 7ex;
+  align-items: center;
+
+  & > a {
+    // logo
+    height: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+    margin-right: 1em;
+  }
+
+  #header-name {
+    font-size: 6ex;
+    font-weight: normal;
+  }
+
+  #header-name a {
+    color: #888;
+
+    &:hover {
+      color: #555;
+    }
+  }
+
+  #header-user {
+    flex: 1;
+    text-align: right;
+  }
+}
+
+a {
+  color: $brand-blue-1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $brand-blue-2;
+}
+
+.notice:not(:empty) {
+  background-color: $brand-blue-1;
+  color: white;
+  border: 1px solid $brand-blue-2;
+  border-radius: 5px;
+  padding: 0.5em;
+}

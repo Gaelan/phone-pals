@@ -1,7 +1,16 @@
-<h1>Phone Pals</h1>
 <% unless user_signed_in? %>
-<p><a href="<%= new_user_session_path %>">Log In</a></p>
-<p><a href="<%= new_user_registration_path %>">Sign Up</a></p>
+
+<div id="home-cta">
+  <%= image_tag "logo.png" %>
+  <%= link_to "Sign up as a volunteer caller", new_user_registration_path %>
+  <p class="fine-print">We are currently limiting volunteers to Washington high school students.</p>
+</div>
+
+<p id="home-gist">Connecting elderly people isolated by the COIVD-19 pandemic with high school volunteers for deep phone conversations.</p>
+<p>The COVID-19 pandemic has caused many to feel isolated. One demographic that has felt the effects of this isolation most keenly is residents in assisted care homes. Many of these residents are not allowed to see  visitors or even have contact with each other. This project aims to connect older mentors with volunteer students, bridging the generational gap and improving the emotional health of both groups.</p>
+<p>The pandemic restrictions have made it difficult for students to connect with friends and socialize. This project fosters connection by starting  conversations and encouraging  relationships. The POLITE NAME FOR OLD PEOPLE who volunteer to be called are making as much of an impact as the callers. They are giving these students a valuable opportunity to understand the perspective of an older generation.</p>
+<p>The faster the world changes, the greater the generational divide becomes. Connecting students with POLITE NAME FOR OLD PEOPLE will improve the emotional health of both and give the gift of shared perspectives.</p>
+
 <% end %>
 <% if current_user && !current_user.student? %>
 If you're a high school student and you'd like to volunteer to make calls,

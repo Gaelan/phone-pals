@@ -5,10 +5,6 @@ class CalleePolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    user && user.student?
-  end
-
   def show?
     record.users.include? user
   end

@@ -2,6 +2,7 @@ class Callee < ApplicationRecord
   belongs_to :organization
   has_many :relationships
   has_many :users, through: :relationships
+  has_many :calls
 
   def safe_name
     "#{first_name[0]}. #{last_name}"

@@ -1,0 +1,16 @@
+<h1>
+  <% if current_user.callees.empty? %>
+    Choose someone to call
+  <% else %>
+    Call someone new
+  <% end %>
+</h1>
+
+<% @callees.each do |callee| %>
+  <% if callee.can_start_relationship? %>
+    <div class="callee">
+      <p><%= callee.bio %></p>
+      <p><%= link_to "Select this person", callee_relationships_path(callee), method: :POST, data: {confirm: "Are you sure you'd like to add this person? You can add #{current_user.available_relationships} more people, including this one."} %></p>
+    </div>
+  <% end %>
+<% end %>
