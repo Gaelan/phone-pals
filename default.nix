@@ -61,13 +61,7 @@ in pkgs.stdenv.mkDerivation {
   buildPhase = ''
     cp -r ${nodeModules}/node_modules node_modules
 
-    # HACK: disable yarn
-    mv bin/yarn bin/xyarn
-    touch bin/yarn
-    chmod +x bin/yarn
-    rails assets:precompile
-    rm bin/yarn
-    mv bin/xyarn bin/yarn
+    rails yarn:disable assets:precompile
   '';
 
   installPhase = ''
