@@ -67,4 +67,6 @@ in pkgs.stdenv.mkDerivation {
   installPhase = ''
     cp -r . $out
   '';
+
+  passthru = { inherit rubyenv; };
 }
