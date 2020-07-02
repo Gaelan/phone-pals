@@ -8,8 +8,8 @@ let
     gemfile = ./Gemfile;
     lockfile = ./Gemfile.lock;
     gemset = ./gemset.nix;
-    # Bundler groups available in this environment
-    groups = [ "default" env ];
+    # Bundler groups available in this environment TODO
+    groups = [ "default" "development" "test" "production" ];
   };
   nodeModules = pkgs.yarn2nix-moretea.mkYarnModules {
     name = "phone-pals-nodeModules";
