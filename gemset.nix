@@ -242,6 +242,17 @@
     };
     version = "4.7.2";
   };
+  domain_name = {
+    dependencies = ["unf"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0lcqjsmixjp52bnlgzh4lg9ppsk52x9hpwdjd53k8jnbah2602h0";
+      type = "gem";
+    };
+    version = "0.5.20190701";
+  };
   erubi = {
     groups = ["default" "development"];
     platforms = [];
@@ -272,6 +283,17 @@
       type = "gem";
     };
     version = "0.4.2";
+  };
+  http-cookie = {
+    dependencies = ["domain_name"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "004cgs4xg5n6byjs7qld0xhsjq3n6ydfh897myr2mibvh6fjc49g";
+      type = "gem";
+    };
+    version = "1.0.3";
   };
   i18n = {
     dependencies = ["concurrent-ruby"];
@@ -328,6 +350,17 @@
     };
     version = "2.7.1";
   };
+  mailgun-ruby = {
+    dependencies = ["rest-client"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "18g9cmmf0mxv68nlh12ghxhb17lkanl89i3kqqb2987b296b170s";
+      type = "gem";
+    };
+    version = "1.2.0";
+  };
   marcel = {
     dependencies = ["mimemagic"];
     groups = ["default"];
@@ -348,6 +381,27 @@
       type = "gem";
     };
     version = "1.0.0";
+  };
+  mime-types = {
+    dependencies = ["mime-types-data"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1zj12l9qk62anvk9bjvandpa6vy4xslil15wl6wlivyf51z773vh";
+      type = "gem";
+    };
+    version = "3.3.1";
+  };
+  mime-types-data = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1z75svngyhsglx0y2f9rnil2j08f9ab54b3l95bpgz67zq2if753";
+      type = "gem";
+    };
+    version = "3.2020.0512";
   };
   mimemagic = {
     groups = ["default"];
@@ -398,6 +452,16 @@
       type = "gem";
     };
     version = "1.3.3";
+  };
+  netrc = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0gzfmcywp1da8nzfqsql2zqi648mfnx6qwkig3cv36n9m0yy676y";
+      type = "gem";
+    };
+    version = "0.11.0";
   };
   nio4r = {
     groups = ["default"];
@@ -600,15 +664,16 @@
     };
     version = "3.0.1";
   };
-  ruby_http_client = {
+  rest-client = {
+    dependencies = ["http-cookie" "mime-types" "netrc"];
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1h89v8fi2h5cbvwv96likffxhzs619ryvzvlqlc5gaiwpj2lqfyy";
+      sha256 = "1hzcs2r7b5bjkf2x2z3n8z6082maz0j8vqjiciwgg3hzb63f958j";
       type = "gem";
     };
-    version = "3.5.0";
+    version = "2.0.2";
   };
   rubyzip = {
     groups = ["default" "test"];
@@ -663,28 +728,6 @@
       type = "gem";
     };
     version = "3.142.7";
-  };
-  sendgrid-actionmailer = {
-    dependencies = ["mail" "sendgrid-ruby"];
-    groups = ["default"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "15iqp98knfb1fi40zdz15mlavz57yld5davyzql2936r4jdbybrd";
-      type = "gem";
-    };
-    version = "3.0.2";
-  };
-  sendgrid-ruby = {
-    dependencies = ["ruby_http_client"];
-    groups = ["default"];
-    platforms = [];
-    source = {
-      remotes = ["https://rubygems.org"];
-      sha256 = "1rw1d9ppyhqxrpg8vc722mkfjk6afav8920miqzs1nyr7yay75ki";
-      type = "gem";
-    };
-    version = "6.2.1";
   };
   spring = {
     groups = ["development"];
@@ -800,6 +843,27 @@
       type = "gem";
     };
     version = "1.2.7";
+  };
+  unf = {
+    dependencies = ["unf_ext"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0bh2cf73i2ffh4fcpdn9ir4mhq8zi50ik0zqa1braahzadx536a9";
+      type = "gem";
+    };
+    version = "0.1.4";
+  };
+  unf_ext = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0wc47r23h063l8ysws8sy24gzh74mks81cak3lkzlrw4qkqb3sg4";
+      type = "gem";
+    };
+    version = "0.0.7.7";
   };
   warden = {
     dependencies = ["rack"];
