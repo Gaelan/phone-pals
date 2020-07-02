@@ -62,6 +62,8 @@ in pkgs.stdenv.mkDerivation {
     cp -r ${nodeModules}/node_modules node_modules
 
     rails yarn:disable assets:precompile
+
+    ln -s /tmp/phonepals/tmp tmp
   '';
 
   installPhase = ''
