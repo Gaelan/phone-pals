@@ -114,4 +114,8 @@ Rails.application.configure do
   config.action_mailer.mailgun_settings = {
     api_key: ENV['MAILGUN_API_KEY'], domain: 'mg.phonepals.net'
   }
+
+  config.action_mailer.default_url_options = {
+    host: 'phonepals.net', protocol: 'https'
+  }
 end
