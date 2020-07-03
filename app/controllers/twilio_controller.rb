@@ -62,7 +62,7 @@ class TwilioController < ApplicationController
     respond do |r|
       r.dial(
         number: relationship.callee.e164_number,
-        caller_id: Phoneli.parse(ENV['TWILIO_NUMBER']).e164
+        caller_id: Phonelib.parse(ENV['TWILIO_NUMBER']).e164
       )
     end
   end
