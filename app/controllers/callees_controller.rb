@@ -14,7 +14,11 @@ class CalleesController < ApplicationController
 
   # GET /callees/1
   # GET /callees/1.json
-  def show; end
+  def show
+    @relationship = Relationship.find_by(callee: @callee, user: current_user)
+    @relationship.ensure_code!
+    @call_number = ENV['TWILIO_NUMBER']
+  end
 
   # GET /callees/new
   def new

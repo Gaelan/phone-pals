@@ -3,6 +3,7 @@ class Callee < ApplicationRecord
   has_many :relationships
   has_many :users, through: :relationships
   has_many :calls
+  validates :phone_number, phone: { allow_blank: true, extensions: false }
 
   def safe_name
     "#{first_name[0]}. #{last_name}"
@@ -16,5 +17,11 @@ class Callee < ApplicationRecord
 
   def can_start_relationship?
     available_relationships > 0
+  end
+
+  def e164_number
+    number =
+      phone_number.empty? ? organization.switchboard_number : phone_number
+    Phonelib.parse(number).e164
   end
 end

@@ -5,8 +5,11 @@
 </p>
 
 <h2>Call this person</h2>
-<p>
-Call this person at <%= @callee.phone_number %>.
-</p>
+<div class="call-info">
+  <div class="text">Call</div>
+  <div class="number"><%= Phonelib.parse(@call_number).national %></div>
+  <div class="text">and enter the code</div>
+  <div class="number"><%= @relationship.code %></div>
+</div>
 
 <%= link_to 'Back', relationships_path %>

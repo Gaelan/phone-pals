@@ -1,3 +1,20 @@
 // Place all the styles related to the callees controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "_shared";
+
+.call-info {
+  background-color: $brand-blue-1;
+  border: 1px solid $brand-blue-2;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+
+  .text {
+    font-size: 1.5em;
+  }
+  .number {
+    font-weight: bold;
+    font-size: 2em;
+  }
+}
