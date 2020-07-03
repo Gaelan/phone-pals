@@ -40,6 +40,15 @@ header {
   }
 }
 
+@media (max-width: 450px) {
+  header {
+    height: 5ex;
+    #header-name {
+      font-size: 4ex;
+    }
+  }
+}
+
 a {
   color: $brand-blue-1;
   text-decoration: none;
