@@ -1,0 +1,30 @@
+@import "_shared";
+
+.about-staff {
+  display: flex;
+
+  background-color: #eee;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+
+  padding: 10px;
+  margin-bottom: 10px;
+
+  img {
+    height: 150px;
+    border-radius: 100%;
+    margin-right: 10px;
+  }
+}
+
+.care-contact-button {
+  display: block;
+  background-color: $brand-blue-1;
+  color: white;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid $brand-blue-2;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
