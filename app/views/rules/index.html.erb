@@ -1,0 +1,52 @@
+<h1>
+  <% if current_user && !current_user.accepted_rules? %>
+    Some rules and advice before your first call
+  <% else %>
+    Some rules and advice
+  <% end %>
+</h1>
+
+<h2>Introduce yourself.</h2>
+<p>
+  When the other person picks up, tell them <strong>your first name</strong>,
+  <strong>your age</strong> (or that you're a high school student), and that
+  you're a <strong>volunteer with Phone Pals</strong>. Ask <strong>if this is a 
+  good time</strong>. Finally, be sure to <strong>thank them for 
+  taking the time to talk.</strong>
+</p>
+<p>
+  The people you call should all know that they've been signed up. But they may
+  have forgotten, so be prepared to explain why you're calling.
+</p>
+<p>
+  In some cases, you'll be connected to an assisted living home's switchboard
+  first. Tell them that you're with Phone Pals and the name of the person
+  you're calling, and they'll put you through. Then introduce yourself as normal.
+</p>
+
+<h2>Start a conversation.</h2>
+<p>
+  Feel free to converse naturally, making sure you <strong>speak slowly and
+  clearly</strong>. Here are some ideas for starting a conversation:
+</p>
+<ul>
+  <li> Ask about their childhood: their parents and siblings, where they grew up, the schools they went to, childhood friends, favorite books, etc </li>
+  <li> Ask about their career. Why did they choose the career they did? </li>
+  <li> Ask about their life. Did they ever get married? Travel? Serve in the military? Have kids? </li>
+  <li> Ask if they have any advice for young people like you. </li>
+</ul>
+
+<h2>A few rules.</h2>
+<p>
+  For your safety and the safety of the seniors, we ask that you follow a few rules:
+</p>
+<ul>
+  <li>Don't give or recieve <strong>money or gifts</strong>.</li>
+  <li>Don't make plans to <strong>meet in person</strong>.</li>
+  <li>Don't <strong>share any contact information</strong>, such as phone numbers or addreses.</li>
+  <li>Don't <strong>communicate outside of Phone Pals</strong>.</li>
+</ul>
+
+<% if current_user && !current_user.accepted_rules? %>
+  <%= link_to "Got it", rules_accept_path, class: "rules-done-button", method: :post %>
+<% end %>

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'twilio/incoming'
   root to: 'home#index'
   devise_for :users
 
@@ -13,6 +12,11 @@ Rails.application.routes.draw do
   end # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :relationships, only: %i[index new]
+
+  get '/pages/*id' => 'pages#show', as: :page, format: false
+
+  get 'rules' => 'rules#index'
+  post 'rules/accept' => 'rules#accept'
 
   post 'twilio/incoming' => 'twilio#incoming'
   post 'twilio/got_code' => 'twilio#got_code'

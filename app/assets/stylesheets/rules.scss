@@ -1,0 +1,24 @@
+// Place all the styles related to the rules controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "_shared";
+
+.controller-rules {
+  h2 {
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  .rules-done-button {
+    display: block;
+    background-color: $brand-blue-1;
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid $brand-blue-2;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+  }
+}

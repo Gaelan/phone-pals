@@ -316,6 +316,16 @@
     };
     version = "0.4.2";
   };
+  high_voltage = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0bvcan75jl3xjxr759va2ahimjdjv6k1hy2k9rsv68fc2ihp31kp";
+      type = "gem";
+    };
+    version = "3.1.2";
+  };
   http-cookie = {
     dependencies = ["domain_name"];
     groups = ["default"];
