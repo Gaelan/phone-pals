@@ -9,6 +9,13 @@
 <p id="home-gist">Connecting older people isolated by the COVID-19 pandemic with high school volunteers for deep phone conversations.</p>
 <p>The COVID-19 pandemic has caused many to feel isolated. One demographic that has felt the effects of this isolation most keenly is the older generation. Many independent living and assisted care residents are not allowed to see visitors or even have contact with each other. Our project aims to connect students with residents for deep phone conversations, bridging the generation gap and improving emotional health by giving the gift of shared perspectives. </p>
 
+<h2 id="meet-founders">Meet the founders</h2>
+<div id="founders">
+<% ["5ABJkY6ApQY", "1fGERBstcTE", "BgduhQ0O9b4", "c9MzdDtPhYs"].each do |id| %>
+  <iframe src="https://www.youtube-nocookie.com/embed/<%= id %>?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% end %>
+</div>
+
 <% end %>
 <% if current_user && !current_user.student? %>
 If you're a high school student and you'd like to volunteer to make calls,
