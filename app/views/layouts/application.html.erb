@@ -34,6 +34,10 @@
         <%= yield %>
       </main>
       <footer>
+        <% if current_user && current_user.admin? %>
+          <%= link_to "Admin", organizations_path %>
+          &middot;
+        <% end %>
         <%= link_to "About", page_path("about") %>
         &middot;
         <%= link_to "Rules and advice", rules_path %>
