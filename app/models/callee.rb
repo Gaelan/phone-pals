@@ -5,10 +5,6 @@ class Callee < ApplicationRecord
   has_many :calls
   validates :phone_number, phone: { allow_blank: true, extensions: false }
 
-  def safe_name
-    "#{first_name[0]}. #{last_name}"
-  end
-
   RELATIONSHIP_LIMIT = 1
 
   def available_relationships

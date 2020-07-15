@@ -93,6 +93,6 @@ class CalleesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def callee_params
-    params.require(:callee).permit(:first_name, :last_name, :bio, :phone_number)
+    params.require(:callee).permit(:name, :bio, :phone_number)
   end
 end

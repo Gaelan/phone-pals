@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_233853) do
+ActiveRecord::Schema.define(version: 2020_07_15_184204) do
 
   create_table "callees", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "organization_id", null: false
     t.string "phone_number"
+    t.string "name"
     t.index ["organization_id"], name: "index_callees_on_organization_id"
   end
 
@@ -75,6 +74,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_233853) do
     t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "accepted_rules"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

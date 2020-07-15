@@ -12,13 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <p>
+      This name will be visible to volunteers that choose to call this person.
+      You may prefer to enter something such as "J. Doe" to preserve privacy.
+    </p>
   </div>
 
   <div class="field">
