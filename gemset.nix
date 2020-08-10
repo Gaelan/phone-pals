@@ -747,6 +747,16 @@
     };
     version = "2.0.2";
   };
+  rollbar = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1f3igz2fciag1f6572j7f4khcndkriizd1pxkvdv2i91c94wwgj6";
+      type = "gem";
+    };
+    version = "2.27.0";
+  };
   rubyzip = {
     groups = ["default" "test"];
     platforms = [];

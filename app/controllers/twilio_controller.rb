@@ -59,12 +59,28 @@ class TwilioController < ApplicationController
       return
     end
 
+    call =
+      Call.create(
+        callee: relationship.callee,
+        user: relationship.user,
+        incoming_number: params['From']
+      )
+
     respond do |r|
       r.dial(
         number: relationship.callee.e164_number,
-        caller_id: Phonelib.parse(ENV['TWILIO_NUMBER']).e164
+        caller_id: Phonelib.parse(ENV['TWILIO_NUMBER']).e164,
+        action: twilio_post_call_url(call_id: call.id)
       )
     end
+  end
+
+  def post_call
+    Call.find(params[:call_id]).update(
+      complete: true, seconds: params['DialCallDuration']
+    )
+
+    respond(&:hangup)
   end
 
   protected

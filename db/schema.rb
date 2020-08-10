@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_15_184204) do
+ActiveRecord::Schema.define(version: 2020_08_10_224059) do
 
   create_table "callees", force: :cascade do |t|
     t.text "bio"
@@ -25,10 +25,12 @@ ActiveRecord::Schema.define(version: 2020_07_15_184204) do
   create_table "calls", force: :cascade do |t|
     t.integer "callee_id", null: false
     t.integer "user_id", null: false
-    t.integer "minutes"
     t.text "details"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "seconds"
+    t.boolean "complete"
+    t.string "incoming_number"
     t.index ["callee_id"], name: "index_calls_on_callee_id"
     t.index ["user_id"], name: "index_calls_on_user_id"
   end

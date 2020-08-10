@@ -20,4 +20,5 @@ Rails.application.routes.draw do
 
   post 'twilio/incoming' => 'twilio#incoming'
   post 'twilio/got_code' => 'twilio#got_code'
+  post 'twilio/post_call' => 'twilio#post_call'
 end

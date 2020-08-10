@@ -61,3 +61,4 @@ gem 'twilio-ruby'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'phonelib'
 gem "high_voltage"
+gem 'rollbar'
