@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_224059) do
+ActiveRecord::Schema.define(version: 2020_08_14_034554) do
 
   create_table "callees", force: :cascade do |t|
     t.text "bio"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_224059) do
     t.integer "seconds"
     t.boolean "complete"
     t.string "incoming_number"
+    t.datetime "call_date"
     t.index ["callee_id"], name: "index_calls_on_callee_id"
     t.index ["user_id"], name: "index_calls_on_user_id"
   end

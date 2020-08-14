@@ -380,6 +380,16 @@
     };
     version = "3.2.1";
   };
+  local_time = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1965297is1h2wzbaln5yawgzxnrpxf7v7qakmcrryjcvbmbkcdnd";
+      type = "gem";
+    };
+    version = "2.1.0";
+  };
   loofah = {
     dependencies = ["crass" "nokogiri"];
     groups = ["default" "development"];

@@ -5,4 +5,8 @@ class Relationship < ApplicationRecord
   def ensure_code!
     update(code: rand(100_000..999_999).to_s) unless code
   end
+
+  def calls
+    Call.where(user: user, callee: callee)
+  end
 end

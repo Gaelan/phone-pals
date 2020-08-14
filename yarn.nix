@@ -4370,6 +4370,14 @@
       };
     }
     {
+      name = "local_time___local_time_2.1.0.tgz";
+      path = fetchurl {
+        name = "local_time___local_time_2.1.0.tgz";
+        url  = "https://registry.yarnpkg.com/local-time/-/local-time-2.1.0.tgz";
+        sha1 = "be42f06bf269f9da77cb61ea722aa424dd01d919";
+      };
+    }
+    {
       name = "locate_path___locate_path_2.0.0.tgz";
       path = fetchurl {
         name = "locate_path___locate_path_2.0.0.tgz";
