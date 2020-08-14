@@ -19,6 +19,7 @@
       <li><%= local_time(c.call_date) %> - <%= c.complete? ? format_duration(c.seconds) : "call ongoing" %></li>
     <% end %>
   </ul>
+  <p>Total: <%= format_duration(@relationship.calls.sum(:seconds)) %></p>
 <% end %>
 
 <%= link_to 'Back', relationships_path %>

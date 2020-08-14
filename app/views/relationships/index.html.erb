@@ -1,6 +1,6 @@
 <% @callees.each do |callee| %>
   <div class="callee">
-    <h2><%= callee.name %></h2>
+    <h2><%= link_to callee.name, callee_path(callee) %></h2>
     <p><%= callee.bio %></p>
     <p><%= link_to "Call", callee_path(callee)%> </p>
   </div>

@@ -63,7 +63,8 @@ class TwilioController < ApplicationController
       Call.create(
         callee: relationship.callee,
         user: relationship.user,
-        incoming_number: params['From']
+        incoming_number: params['From'],
+        call_date: Time.zone.now
       )
 
     respond do |r|

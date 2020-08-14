@@ -7,6 +7,6 @@ class Relationship < ApplicationRecord
   end
 
   def calls
-    Call.where(user: user, callee: callee)
+    Call.where(user: user, callee: callee).order(call_date: :desc)
   end
 end
