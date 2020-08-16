@@ -11,10 +11,10 @@ class User < ApplicationRecord
   has_many :relationships
   has_many :callees, through: :relationships
 
-  STUDENT_DOMAINS = %w[edtools.psd401.net stu.sumnersd.org bprep.org]
+  STUDENT_DOMAINS = %w[.edu @edtools.psd401.net @stu.sumnersd.org @bprep.org]
 
   def student?
-    STUDENT_DOMAINS.any? { |domain| email.ends_with? "@#{domain}" }
+    STUDENT_DOMAINS.any? { |domain| email.ends_with? domain }
   end
 
   def organization_member?
