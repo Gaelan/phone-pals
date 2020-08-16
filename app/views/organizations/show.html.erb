@@ -31,7 +31,7 @@
         <td><%= callee.name %></td>
         <td><%= callee.bio %></td>
         <td><%= link_to 'Edit', edit_organization_callee_path(callee.organization, callee) %></td>
-        <td><%= link_to 'Destroy', [callee.organization, callee], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', [callee.organization, callee], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
