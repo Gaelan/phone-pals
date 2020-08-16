@@ -2,6 +2,32 @@
 
 <h1>Organizations</h1>
 
+<% if current_user.admin? %>
+  <%
+  total_students = User.where.not(confirmed_at: nil).count &:student?
+  students_with_calls = User.joins(:calls).distinct.count
+  %>
+  <p>
+    Total student volunteers: <%= total_students %> <br>
+    Students who've made calls: <%= students_with_calls %> <br>
+    Students who haven't made calls: <%= total_students - students_with_calls %>
+  </p>
+
+  <%
+  callees_with_calls = Callee.joins(:calls).distinct.count
+  %>
+  <p>
+    Total seniors: <%= Callee.count %> <br>
+    Seniors who've gotten calls: <%= callees_with_calls %> <br>
+    Seniors who haven't gotten calls: <%= Callee.count - callees_with_calls %>
+  </p>
+
+  <p>
+    Total calls (over two minute): <%= Call.where("seconds > 120").count %> <br>
+    Total call time: <%= format_duration(Call.sum(:seconds)) %>
+  </p>
+<% end %>
+
 <table>
   <thead>
     <tr>

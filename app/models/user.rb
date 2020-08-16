@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :organizations, through: :organization_memberships
   has_many :relationships
   has_many :callees, through: :relationships
+  has_many :calls
 
   STUDENT_DOMAINS = %w[.edu @edtools.psd401.net @stu.sumnersd.org @bprep.org]
 
