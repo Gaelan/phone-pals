@@ -23,7 +23,7 @@
   </p>
 
   <p>
-    Total calls (over two minute): <%= Call.where("seconds > 120").count %> <br>
+    Total calls (over five minutes): <%= Call.where("seconds > 300").count %> <br>
     Total call time: <%= format_duration(Call.sum(:seconds)) %>
   </p>
 <% end %>
